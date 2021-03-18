@@ -8,7 +8,7 @@ for (var country in countryKeys) {
         console.log("Country code: " + country);
         console.log("Level: " + level + " - Keys: " + countryKeys[country]["normal"][level]);
     for (var level in countryKeys[country]["prestige"]) {
-        console.log("Level: " + level + " - Keys: " + countryKeys[country]["prestige"][level]);
+        console.log("Level: 30 - Keys: " + countryKeys[country]["prestige"][level]);
     }
     }
 }
