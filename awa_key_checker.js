@@ -1,10 +1,10 @@
 /*
-Paste the total contents of this file into your browser console
+Paste the total contents of this file into your browser console (F12 or Ctrl + Shift + J)
 when you are on an Alienware Arena giveaway page.
 
 Will show available key amount, level requirement and restrictions to certain countries.
 
-Updated: March 19, 2021
+Updated: March 20, 2021
 */
 
 var country_with_keys = [];
@@ -554,20 +554,22 @@ for (var country in countryKeys) {
 };
 country_with_keys.sort();
 country_without_keys.sort();
-console.log();
+console.log("");
 if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
-	console.log("Countries with keys:" + country_with_keys);
+	console.log("%cCountries with keys:", 'color: green; font-weight: bold; font-size: 14px');
+	console.log(country_with_keys.toString());
 } else if (country_with_keys.length === 0) {
-	console.log("All out! There are no more keys left in this giveaway!");
+	console.log("%cAll out! There are no more keys left in this giveaway!", 'color: red; font-weight: bold; font-size: 14px');
 } else {
-	console.log("Every country has keys available!");
+	console.log("%cEvery country has keys available!", 'color: green; font-weight: bold');
 }
 for (var country in countryKeys) {
 	if (countryKeys[country]["normal"].length === 0 && countryKeys[country]["prestige"].length === 0) {
 		continue
 	};
 	for (var level in countryKeys[country]["normal"]) {
-		console.log("Key Availability:");
+		console.log("");
+		console.log("%cKey Availability:", 'font-weight: bold; font-size: 14px');
 		console.log("Level: " + level + " - Keys: " + countryKeys[country]["normal"][level]);
 		for (var level in countryKeys[country]["prestige"]) {
 			console.log("Level: 30 - Keys: " + countryKeys[country]["prestige"][level]);
@@ -575,14 +577,16 @@ for (var country in countryKeys) {
 	};
 	if (countryKeys[country]["normal"].length === 0 && countryKeys[country]["prestige"].length !== 0) {
 		for (var level in countryKeys[country]["prestige"]) {
-			console.log("Key Availability:");
+			console.log("");
+			console.log("%cKey Availability:", 'font-weight: bold; font-size: 14px');
 			console.log("Level: 30 - Keys: " + countryKeys[country]["prestige"][level]);
 		};
 	};
 	break
 };
-console.log();
+console.log("");
 if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
-	console.log("Countries without keys:" + country_without_keys);
-	console.log();
+	console.log("%cCountries without keys:", 'color: red; font-weight: bold; font-size: 14px');
+	console.log(country_without_keys.toString());
+	console.log("");
 }
