@@ -10,8 +10,7 @@ Updated: March 20, 2021
 var country_with_keys = [];
 var country_without_keys = [];
 var countries = new function () {
-	var list = [
-		{
+	var list = [{
 		code: "AF",
 		name: "Afghanistan"}, {
 		code: "AX",
@@ -554,6 +553,8 @@ for (var country in countryKeys) {
 };
 country_with_keys.sort();
 country_without_keys.sort();
+country_with_keys[0] = country_with_keys[0].split(" ").join("");
+country_without_keys[0] = country_without_keys[0].split(" ").join("");
 console.log("\n");
 if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
 	console.log("%cCountries with keys:", 'color: green; font-weight: bold; font-size: 14px');
