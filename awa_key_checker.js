@@ -447,7 +447,7 @@ var countries = new function () {
 		code: "SY",
 		name: "Syrian Arab Republic"}, {
 		code: "TW",
-		name: "Taiwan, Province of China"}, {
+		name: "Taiwan"}, {
 		code: "TJ",
 		name: "Tajikistan"}, {
 		code: "TZ",
@@ -554,7 +554,7 @@ for (var country in countryKeys) {
 };
 country_with_keys.sort();
 country_without_keys.sort();
-console.log("");
+console.log("\n");
 if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
 	console.log("%cCountries with keys:", 'color: green; font-weight: bold; font-size: 14px');
 	console.log(country_with_keys.toString());
@@ -568,7 +568,7 @@ for (var country in countryKeys) {
 		continue
 	};
 	for (var level in countryKeys[country]["normal"]) {
-		console.log("");
+		console.log("\n");
 		console.log("%cKey Availability:", 'font-weight: bold; font-size: 14px');
 		console.log("Level: " + level + " - Keys: " + countryKeys[country]["normal"][level]);
 		for (var level in countryKeys[country]["prestige"]) {
@@ -577,16 +577,16 @@ for (var country in countryKeys) {
 	};
 	if (countryKeys[country]["normal"].length === 0 && countryKeys[country]["prestige"].length !== 0) {
 		for (var level in countryKeys[country]["prestige"]) {
-			console.log("");
+			console.log("\n");
 			console.log("%cKey Availability:", 'font-weight: bold; font-size: 14px');
 			console.log("Level: 30 - Keys: " + countryKeys[country]["prestige"][level]);
 		};
 	};
 	break
 };
-console.log("");
+console.log("\n");
 if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
 	console.log("%cCountries without keys:", 'color: red; font-weight: bold; font-size: 14px');
 	console.log(country_without_keys.toString());
-	console.log("");
+	console.log("\n");
 }
