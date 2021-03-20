@@ -553,8 +553,12 @@ for (var country in countryKeys) {
 };
 country_with_keys.sort();
 country_without_keys.sort();
-country_with_keys[0] = country_with_keys[0].split(" ").join("");
-country_without_keys[0] = country_without_keys[0].split(" ").join("");
+if (country_with_keys.length !== 0) {
+	country_with_keys[0] = country_with_keys[0].split(" ").join("");
+}
+if (country_without_keys.length !== 0) {
+	country_without_keys[0] = country_without_keys[0].split(" ").join("");
+}
 console.log("\n");
 if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
 	console.log("%cCountries with keys:", 'color: green; font-weight: bold; font-size: 14px');
@@ -562,7 +566,7 @@ if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
 } else if (country_with_keys.length === 0) {
 	console.log("%cAll out! There are no more keys left in this giveaway!", 'color: red; font-weight: bold; font-size: 14px');
 } else {
-	console.log("%cEvery country has keys available!", 'color: green; font-weight: bold');
+	console.log("%cEvery country has keys available!", 'color: green; font-weight: bold; font-size: 14px');
 }
 for (var country in countryKeys) {
 	if (countryKeys[country]["normal"].length === 0 && countryKeys[country]["prestige"].length === 0) {
