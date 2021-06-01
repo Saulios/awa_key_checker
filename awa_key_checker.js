@@ -4,7 +4,7 @@ when you are on an Alienware Arena giveaway page.
 
 Will show available key amount, level requirement and restrictions to certain countries.
 
-Updated: March 20, 2021
+Updated: June 1, 2021
 */
 
 if (window.countryKeys) {
