@@ -2,9 +2,9 @@
 Paste the total contents of this file into your browser console (F12 or Ctrl + Shift + J)
 when you are on an Alienware Arena giveaway page.
 
-Will show available key amount, level requirement and restrictions to certain countries.
+Will show available key amount, tier requirement and restrictions to certain countries.
 
-Updated: March 20, 2021
+Updated: April 13, 2022
 */
 
 var country_with_keys = [];
@@ -545,7 +545,7 @@ var countries = new function () {
 for (var country in countryKeys) {
 	var get_country = countries.getEntry(country);
 	var get_country_name = get_country.name
-	if (countryKeys[country]["normal"].length === 0 && countryKeys[country]["prestige"].length === 0) {
+	if (countryKeys[country].length === 0) {
 		country_without_keys.push(" " + get_country_name);
 	} else {
 		country_with_keys.push(" " + get_country_name);
@@ -569,23 +569,13 @@ if (country_without_keys.length !== 0 && country_with_keys.length !== 0) {
 	console.log("%cEvery country has keys available!", 'color: green; font-weight: bold; font-size: 14px');
 }
 for (var country in countryKeys) {
-	if (countryKeys[country]["normal"].length === 0 && countryKeys[country]["prestige"].length === 0) {
+	if (countryKeys[country].length === 0) {
 		continue
 	};
-	for (var level in countryKeys[country]["normal"]) {
+	for (var level in countryKeys[country]) {
 		console.log("\n");
 		console.log("%cKey Availability:", 'font-weight: bold; font-size: 14px');
-		console.log("Level: " + level + " - Keys: " + countryKeys[country]["normal"][level]);
-		for (var level in countryKeys[country]["prestige"]) {
-			console.log("Level: 30 - Keys: " + countryKeys[country]["prestige"][level]);
-		};
-	};
-	if (countryKeys[country]["normal"].length === 0 && countryKeys[country]["prestige"].length !== 0) {
-		for (var level in countryKeys[country]["prestige"]) {
-			console.log("\n");
-			console.log("%cKey Availability:", 'font-weight: bold; font-size: 14px');
-			console.log("Level: 30 - Keys: " + countryKeys[country]["prestige"][level]);
-		};
+		console.log("Tier: " + level + " - Keys: " + countryKeys[country][level]);
 	};
 	break
 };
